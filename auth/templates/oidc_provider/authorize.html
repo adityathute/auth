@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permission Request</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/authorize.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-header">
+            <span class="consent-header d-flex-center">Permission Request</span>
+        </div>
+        <div class="container-body">
+            <span class="client-name d-flex-center">{{ client.name | upper }}</span>
+            <span class="consent-header-title d-flex-center">want to access your account</span>
+            <span class="consent-email d-flex-center">{{ user.email }}</span>
+            <span class="consent-header-subtitle d-flex-center">This will allow {{ client.name }} to:</span>
+            <form method="post" action="{% url 'oidc_provider:authorize' %}">
+                {% csrf_token %}
+                {{ hidden_inputs }}
+
+                <ul class="scopes-list">
+                    {% for scope in scopes %}
+                    <li class="consent-scope">
+                        <span class="consent-scope-name">{{ scope.name }}</span>
+                        <span class="consent-scope-description">{{ scope.description }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="buttons">
+                    <button type="submit" class="btn decline" value="Decline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Decline
+                    </button>
+                    <button name="allow" type="submit" class="btn authorize" value="Authorize">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Authorize
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

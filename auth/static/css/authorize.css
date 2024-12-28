@@ -1,0 +1,140 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.d-flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    max-width: 500px;
+    width: 100%;
+}
+
+.container-header {
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(43, 43, 43);
+    background-color: #333333;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.container-body {
+    padding: 15px 30px 30px 30px;
+}
+
+.consent-header {
+    font-size: 24px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.client-name {
+    color: orange;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.consent-header-title {
+    font-size: 18px;
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.consent-header-subtitle {
+    font-size: 16px;
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.5;
+}
+
+.consent-email{
+    font-size: 14px;
+    font-weight: 600;
+    color: #007bff;
+
+}
+
+.scopes-list {
+    list-style-type: none;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #333333;
+    border-radius: 8px;
+}
+
+.consent-scope {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+.consent-scope-name {
+    display: flex;
+    margin-right: 18px;
+    width: 10%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.consent-scope-description {
+    font-size: 13px;
+    line-height: 1.5;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btn svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.decline {
+    background-color: #f44336;
+    color: #ffffff;
+}
+
+.authorize {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
